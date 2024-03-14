@@ -6,7 +6,6 @@ export class UserController {
 
   async createUser(req: Request, res: any) {
     try {
-      console.log("data", req.body);
       const response = await userService.createUser(req.body);
       res.status(StatusCodes.OK).send({
         response,
@@ -20,7 +19,6 @@ export class UserController {
 
   async getProfile(req: any, res: any) {
     try {
-      console.log();
       const response = await userService.getProfile(req.query["userId"]);
       console.log(response);
       res.status(StatusCodes.OK).send({
@@ -33,7 +31,6 @@ export class UserController {
 
   async editUser(req: Request, res: any) {
     try {
-      console.log("bdoy", req.body);
       const response = await userService.editUser(req.body);
       res.status(StatusCodes.OK).send({
         response,
@@ -47,7 +44,6 @@ export class UserController {
 
   async deleteUser(req: any, res: any) {
     try {
-      console.log("data", req.body);
       const response = await userService.deleteUser(req.query["userId"]);
       res.status(StatusCodes.OK).send({
         response,
