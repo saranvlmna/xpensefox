@@ -45,10 +45,10 @@ export class UserController {
     }
   }
 
-  async deleteUser(req: Request, res: any) {
+  async deleteUser(req: any, res: any) {
     try {
       console.log("data", req.body);
-      const response = await userService.deleteUser(req.body);
+      const response = await userService.deleteUser(req.query["userId"]);
       res.status(StatusCodes.OK).send({
         response,
       });

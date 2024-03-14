@@ -27,10 +27,10 @@ export class UserService {
     });
   }
 
-  async deleteUser(data: any) {
+  async deleteUser(userId: any) {
     return await User.destroy({
       where: {
-        id: data.userId,
+        id: userId,
       },
     });
   }
