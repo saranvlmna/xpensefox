@@ -3,14 +3,16 @@ export class UserService {
   constructor() {}
 
   async createUser(data: any) {
-    if (!data.name || !data.phone) throw Error("params missing");
+    if (!data.name || !data.email) throw Error("params missing");
+    if (await this.findUserByEmail(data.email))
+      throw Error("user already exist given mail id!!!");
     return await User.create(data);
   }
 
-  async getProfile(data: any) {
+  async getProfile(userId: any) {
     return await User.findOne({
       where: {
-        id: data.userId,
+        id: userId,
       },
       raw: true,
     });
@@ -25,10 +27,18 @@ export class UserService {
     });
   }
 
-  async deleteUser(data: any) {
+  async deleteUser(userId: any) {
     return await User.destroy({
       where: {
-        id: data.userId,
+        id: userId,
+      },
+    });
+  }
+
+  async findUserByEmail(email: any) {
+    return await User.findOne({
+      where: {
+        email,
       },
     });
   }
