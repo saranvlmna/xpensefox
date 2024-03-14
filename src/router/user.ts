@@ -4,6 +4,6 @@ export const userRouter = Router();
 let userController = new UserController();
 
 userRouter.post("/create", userController.createUser);
-userRouter.get("/list", userController.listUser);
+userRouter.get("/fetch", userController.getProfile);
 userRouter.put("/edit", userController.editUser);
 userRouter.delete("/delete", userController.deleteUser);
