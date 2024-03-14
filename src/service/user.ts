@@ -10,6 +10,7 @@ export class UserService {
   }
 
   async getProfile(userId: any) {
+    if (!userId) throw Error("params missing userId");
     return await User.findOne({
       where: {
         id: userId,
@@ -28,6 +29,7 @@ export class UserService {
   }
 
   async deleteUser(userId: any) {
+    if (!userId) throw Error("params missing userId");
     return await User.destroy({
       where: {
         id: userId,
