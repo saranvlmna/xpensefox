@@ -7,8 +7,13 @@ export class UserService {
     return await User.create(data);
   }
 
-  async listUser(data: any) {
-    return await User.findAll({ raw: true });
+  async getProfile(data: any) {
+    return await User.findOne({
+      where: {
+        id: data.userId,
+      },
+      raw: true,
+    });
   }
 
   async editUser(data: any) {
