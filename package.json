@@ -1,0 +1,40 @@
+{
+  "name": "express-cred",
+  "version": "1.0.0",
+  "description": "direction app",
+  "main": "server.ts",
+  "scripts": {
+    "build": "npx tsc",
+    "start": "nodemon --config nodemon.json",
+    "format": "yarn prettier . --write",
+    "format:check": "npx prettier . --check"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saranvlmna/express-server-template.git"
+  },
+  "useror": "saranjith_p",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/saranvlmna/express-server-template.git/issues"
+  },
+  "homepage": "https://github.com/saranvlmna/express-server-template.git#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "http-status-codes": "^2.3.0",
+    "mysql2": "^3.9.2",
+    "nodemon": "^3.0.3",
+    "pg": "^8.11.3",
+    "sequelize": "^6.37.1",
+    "sequelize-cli": "^6.6.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.20",
+    "prettier": "3.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
