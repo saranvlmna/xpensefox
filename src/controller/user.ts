@@ -18,9 +18,10 @@ export class UserController {
     }
   }
 
-  async getProfile(req: Request, res: any) {
+  async getProfile(req: any, res: any) {
     try {
-      const response = await userService.getProfile(req.body);
+      console.log();
+      const response = await userService.getProfile(req.query["userId"]);
       console.log(response);
       res.status(StatusCodes.OK).send({
         response,

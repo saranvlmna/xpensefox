@@ -9,10 +9,10 @@ export class UserService {
     return await User.create(data);
   }
 
-  async getProfile(data: any) {
+  async getProfile(userId: any) {
     return await User.findOne({
       where: {
-        id: data.userId,
+        id: userId,
       },
       raw: true,
     });
