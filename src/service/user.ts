@@ -3,7 +3,9 @@ export class UserService {
   constructor() {}
 
   async createUser(data: any) {
-    if (!data.name || !data.phone) throw Error("params missing");
+    if (!data.name || !data.email) throw Error("params missing");
+    if (await this.findUserByEmail(data.email))
+      throw Error("user already exist given mail id!!!");
     return await User.create(data);
   }
 
@@ -29,6 +31,14 @@ export class UserService {
     return await User.destroy({
       where: {
         id: data.userId,
+      },
+    });
+  }
+
+  async findUserByEmail(email: any) {
+    return await User.findOne({
+      where: {
+        email,
       },
     });
   }
