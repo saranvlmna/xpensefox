@@ -7,7 +7,9 @@
     "build": "npx tsc",
     "start": "nodemon --config nodemon.json",
     "format": "yarn prettier . --write",
-    "format:check": "npx prettier . --check"
+    "format:check": "npx prettier . --check",
+    "migration:run": "sequelize-cli db:migrate",
+    "migration:revert": "sequelize-cli db:migrate:undo:all"
   },
   "repository": {
     "type": "git",
