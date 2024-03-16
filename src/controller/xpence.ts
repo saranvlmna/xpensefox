@@ -74,9 +74,9 @@ export class XpenceController {
       console.log(error);
     }
   }
-  async deleteXpence() {
+  async deleteXpence(req: any, res: any) {
     try {
-      const response = await xpenceService.heyServer();
+      const response = await xpenceService.deleteXpence();
       res.status(StatusCodes.OK).send({
         response,
       });
