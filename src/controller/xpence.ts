@@ -10,8 +10,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async editXpenceCard(req: any, res: any) {
@@ -20,8 +23,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async deleteXpenceCard(req: any, res: any) {
@@ -30,8 +36,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async listXpenceCards(req: any, res: any) {
@@ -40,8 +49,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async fetchXpence(req: any, res: any) {
@@ -50,8 +62,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async addXpence(req: any, res: any) {
@@ -60,8 +75,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async ediXpence(req: any, res: any) {
@@ -70,8 +88,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
   async deleteXpence(req: any, res: any) {
@@ -80,8 +101,11 @@ export class XpenceController {
       res.status(StatusCodes.OK).send({
         response,
       });
-    } catch (error) {
+    } catch (error: any) {
       console.log(error);
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
     }
   }
 }
