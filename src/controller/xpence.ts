@@ -6,7 +6,7 @@ export class XpenceController {
 
   async createXpenceCard(req: any, res: any) {
     try {
-      const response = await xpenceService.createXpenceCard();
+      const response = await xpenceService.createXpenceCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
