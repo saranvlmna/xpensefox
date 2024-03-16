@@ -1,10 +1,10 @@
 "use strict";
 const { Model } = require("sequelize");
 module.exports = (sequelize, DataTypes) => {
-  class User extends Model {
+  class XpenceCard extends Model {
     static associate(models) {}
   }
-  User.init(
+  XpenceCard.init(
     {
       id: {
         allowNull: false,
@@ -13,13 +13,15 @@ module.exports = (sequelize, DataTypes) => {
         defaultValue: DataTypes.UUIDV4,
       },
       name: DataTypes.STRING,
-      email: DataTypes.STRING,
-      password: DataTypes.STRING,
+      created_month: DataTypes.STRING,
+      budget: DataTypes.STRING,
+      color: DataTypes.STRING,
+      is_active: DataTypes.STRING,
     },
     {
       sequelize,
-      modelName: "users",
+      modelName: "xpence_cards",
     },
   );
-  return User;
+  return XpenceCard;
 };
