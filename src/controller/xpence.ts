@@ -34,9 +34,9 @@ export class XpenceController {
       console.log(error);
     }
   }
-  async listXpenceCards() {
+  async listXpenceCards(req: any, res: any) {
     try {
-      const response = await xpenceService.heyServer();
+      const response = await xpenceService.listXpenceCards();
       res.status(StatusCodes.OK).send({
         response,
       });
