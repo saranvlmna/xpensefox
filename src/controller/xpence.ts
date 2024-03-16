@@ -44,9 +44,9 @@ export class XpenceController {
       console.log(error);
     }
   }
-  async fetchXpence() {
+  async fetchXpence(req: any, res: any) {
     try {
-      const response = await xpenceService.heyServer();
+      const response = await xpenceService.fetchXpence();
       res.status(StatusCodes.OK).send({
         response,
       });
