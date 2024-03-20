@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
       created_month: DataTypes.STRING,
       budget: DataTypes.STRING,
       color: DataTypes.STRING,
-      is_active: DataTypes.STRING,
+      is_active: DataTypes.BOOLEAN,
     },
     {
       sequelize,
