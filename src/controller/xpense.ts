@@ -32,7 +32,7 @@ export class XpenseController {
   }
   async deletexpenseCard(req: any, res: any) {
     try {
-      const response = await xpenseService.deletexpenseCard();
+      const response = await xpenseService.deletexpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
