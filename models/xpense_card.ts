@@ -1,7 +1,7 @@
 import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
 
-interface XpenceCardAttributes {
+interface xpenseCardAttributes {
   id: string;
   name: string;
   created_month: string;
@@ -10,9 +10,9 @@ interface XpenceCardAttributes {
   is_active: boolean;
 }
 
-interface XpenceCardCreationAttributes extends Omit<XpenceCardAttributes, "id"> {}
+interface xpenseCardCreationAttributes extends Omit<xpenseCardAttributes, "id"> {}
 
-class XpenceCard extends Model<XpenceCardAttributes, XpenceCardCreationAttributes> implements XpenceCardAttributes {
+class xpenseCard extends Model<xpenseCardAttributes, xpenseCardCreationAttributes> implements xpenseCardAttributes {
   public id!: string;
   public name!: string;
   public created_month!: string;
@@ -23,7 +23,7 @@ class XpenceCard extends Model<XpenceCardAttributes, XpenceCardCreationAttribute
   public readonly updatedAt!: Date;
 }
 
-XpenceCard.init(
+xpenseCard.init(
   {
     id: {
       type: DataTypes.UUID,
@@ -54,9 +54,9 @@ XpenceCard.init(
   },
   {
     sequelize,
-    modelName: "XpenceCard",
-    tableName: "xpence_cards",
+    modelName: "xpenseCard",
+    tableName: "xpense_cards",
   },
 );
 
-export default XpenceCard;
+export default xpenseCard;

@@ -1,7 +1,7 @@
 {
-  "name": "xpencefox",
+  "name": "xpensefox",
   "version": "1.0.0",
-  "description": "expencefox app",
+  "description": "expensefox app",
   "main": "server.ts",
   "scripts": {
     "build": "npx tsc",

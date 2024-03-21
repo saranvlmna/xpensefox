@@ -2,7 +2,7 @@
   "development": {
     "username": "postgres",
     "password": "vlmna",
-    "database": "xpencefox",
+    "database": "xpensefox",
     "host": "localhost",
     "dialect": "postgres"
   },

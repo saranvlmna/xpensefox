@@ -1,12 +1,12 @@
 import {StatusCodes} from "http-status-codes";
-import {XpenceService} from "../service/xpence";
-const xpenceService = new XpenceService();
-export class XpenceController {
+import {XpenseService} from "../service/xpense";
+const xpenseService = new XpenseService();
+export class XpenseController {
   constructor() {}
 
-  async createXpenceCard(req: any, res: any) {
+  async createxpenseCard(req: any, res: any) {
     try {
-      const response = await xpenceService.createXpenceCard(req.body);
+      const response = await xpenseService.createxpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -17,9 +17,9 @@ export class XpenceController {
       });
     }
   }
-  async editXpenceCard(req: any, res: any) {
+  async editxpenseCard(req: any, res: any) {
     try {
-      const response = await xpenceService.editXpenceCard();
+      const response = await xpenseService.editxpenseCard();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -30,9 +30,9 @@ export class XpenceController {
       });
     }
   }
-  async deleteXpenceCard(req: any, res: any) {
+  async deletexpenseCard(req: any, res: any) {
     try {
-      const response = await xpenceService.deleteXpenceCard();
+      const response = await xpenseService.deletexpenseCard();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -43,9 +43,9 @@ export class XpenceController {
       });
     }
   }
-  async listXpenceCards(req: any, res: any) {
+  async listxpenseCards(req: any, res: any) {
     try {
-      const response = await xpenceService.listXpenceCards();
+      const response = await xpenseService.listxpenseCards();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -56,9 +56,9 @@ export class XpenceController {
       });
     }
   }
-  async fetchXpence(req: any, res: any) {
+  async fetchxpense(req: any, res: any) {
     try {
-      const response = await xpenceService.fetchXpence();
+      const response = await xpenseService.fetchxpense();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -69,9 +69,9 @@ export class XpenceController {
       });
     }
   }
-  async addXpence(req: any, res: any) {
+  async addxpense(req: any, res: any) {
     try {
-      const response = await xpenceService.addXpence();
+      const response = await xpenseService.addxpense();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -82,9 +82,9 @@ export class XpenceController {
       });
     }
   }
-  async ediXpence(req: any, res: any) {
+  async edixpense(req: any, res: any) {
     try {
-      const response = await xpenceService.ediXpence();
+      const response = await xpenseService.edixpense();
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -95,9 +95,9 @@ export class XpenceController {
       });
     }
   }
-  async deleteXpence(req: any, res: any) {
+  async deletexpense(req: any, res: any) {
     try {
-      const response = await xpenceService.deleteXpence();
+      const response = await xpenseService.deletexpense();
       res.status(StatusCodes.OK).send({
         response,
       });
