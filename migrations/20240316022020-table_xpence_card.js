@@ -21,14 +21,9 @@ module.exports = {
       name: {
         type: Sequelize.STRING,
       },
-      created_month: {
-        type: Sequelize.STRING,
-      },
       budget: {
         type: Sequelize.STRING,
-      },
-      color: {
-        type: Sequelize.STRING,
+        allowNull:true
       },
       is_active: {
         type: Sequelize.BOOLEAN,
