@@ -1,5 +1,6 @@
 import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
+import User from "./user";
 
 interface xpenseCardAttributes {
   id: string;
@@ -7,6 +8,7 @@ interface xpenseCardAttributes {
   created_month: string;
   budget: string;
   color: string;
+  userId: string;
   is_active: boolean;
 }
 
@@ -18,9 +20,13 @@ class xpenseCard extends Model<xpenseCardAttributes, xpenseCardCreationAttribute
   public created_month!: string;
   public budget!: string;
   public color!: string;
+  public userId!: string;
   public is_active!: boolean;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
+  static associate(models: {User: typeof User}) {
+    this.belongsTo(models.User, {foreignKey: "userId"});
+  }
 }
 
 xpenseCard.init(
@@ -29,6 +35,10 @@ xpenseCard.init(
       type: DataTypes.UUID,
       primaryKey: true,
       defaultValue: UUIDV4,
+    },
+    userId: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
     name: {
       type: DataTypes.STRING,

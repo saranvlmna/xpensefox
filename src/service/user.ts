@@ -1,9 +1,12 @@
 import User from "../../models/user";
+import {HashService} from "./hash";
+const hashService = new HashService();
 export class UserService {
   constructor() {}
 
   async createUser(data: any) {
-    if (!data.name || !data.email) throw Error("params missing");
+    if (!data.name || !data.email || !data.password) throw Error("params missing");
+    data.password = await hashService.genHash(data.password);
     if (await this.findUserByEmail(data.email)) throw Error("user already exist given mail id!!!");
     return await User.create(data);
   }

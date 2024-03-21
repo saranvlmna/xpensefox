@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "build": "npx tsc",
-    "start:dev": "nodemon --config nodemon.json",
+    "start": "nodemon --config nodemon.json",
     "format": "yarn prettier . --write",
     "format:check": "npx prettier . --check",
     "migration:run": "sequelize-cli db:migrate",
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/saranvlmna/express-server-template.git#readme",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.18.3",
     "http-status-codes": "^2.3.0",
