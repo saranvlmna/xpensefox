@@ -19,7 +19,7 @@ export class XpenseController {
   }
   async editxpenseCard(req: any, res: any) {
     try {
-      const response = await xpenseService.editxpenseCard();
+      const response = await xpenseService.editxpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
