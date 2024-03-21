@@ -1,5 +1,5 @@
-import { StatusCodes } from "http-status-codes";
-import { UserService } from "../service/user";
+import {StatusCodes} from "http-status-codes";
+import {UserService} from "../service/user";
 const userService = new UserService();
 export class UserController {
   constructor() {}

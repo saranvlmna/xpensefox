@@ -1,3 +1,3 @@
-# xpencefox
+# xpensefox
 
-expence calculator
+expense calculator

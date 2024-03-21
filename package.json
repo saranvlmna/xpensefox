@@ -1,11 +1,11 @@
 {
-  "name": "express-cred",
+  "name": "xpensefox",
   "version": "1.0.0",
-  "description": "direction app",
+  "description": "expensefox app",
   "main": "server.ts",
   "scripts": {
     "build": "npx tsc",
-    "start": "nodemon --config nodemon.json",
+    "start:dev": "nodemon --config nodemon.json",
     "format": "yarn prettier . --write",
     "format:check": "npx prettier . --check",
     "migration:run": "sequelize-cli db:migrate",
@@ -29,7 +29,8 @@
     "nodemon": "^3.0.3",
     "pg": "^8.11.3",
     "sequelize": "^6.37.1",
-    "sequelize-cli": "^6.6.2"
+    "sequelize-cli": "^6.6.2",
+    "sequelize-typescript": "^2.1.6"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
