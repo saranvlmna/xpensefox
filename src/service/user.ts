@@ -1,4 +1,4 @@
-import User from "../../models/user";
+import User from "../../database/models/user";
 import {HashService} from "./hash";
 const hashService = new HashService();
 export class UserService {
