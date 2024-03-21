@@ -3,12 +3,6 @@ import {sequelize} from "./index";
 import User from "./user";
 
 class Xpense extends Model {
-  public id!: string;
-  public userId!: string;
-  public cardId!: string;
-  public amount!: number;
-  public readonly createdAt!: Date;
-  public readonly updatedAt!: Date;
   static associate(models: {User: typeof User}) {
     this.belongsTo(models.User, {foreignKey: "userId"});
   }

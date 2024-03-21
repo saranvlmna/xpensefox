@@ -23,7 +23,7 @@ module.exports = {
       },
       budget: {
         type: Sequelize.STRING,
-        allowNull:true
+        allowNull: true,
       },
       is_active: {
         type: Sequelize.BOOLEAN,
