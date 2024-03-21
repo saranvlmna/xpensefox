@@ -2,6 +2,7 @@ import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
 import User from "./user";
 
+
 interface xpenseCardAttributes {
   id: string;
   name: string;
