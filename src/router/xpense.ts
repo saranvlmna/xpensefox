@@ -8,6 +8,6 @@ xpenseRouter.get("/card/edit", xpenseController.editxpenseCard);
 xpenseRouter.put("/card/delete", xpenseController.deletexpenseCard);
 xpenseRouter.delete("/card/list", xpenseController.listxpenseCards);
 xpenseRouter.delete("/fetch", xpenseController.fetchxpense);
-xpenseRouter.delete("/add", xpenseController.addxpense);
+xpenseRouter.post("/add", xpenseController.addxpense);
 xpenseRouter.delete("/edit", xpenseController.edixpense);
 xpenseRouter.delete("/delete", xpenseController.deletexpense);

@@ -71,7 +71,7 @@ export class XpenseController {
   }
   async addxpense(req: any, res: any) {
     try {
-      const response = await xpenseService.addxpense();
+      const response = await xpenseService.addxpense(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
