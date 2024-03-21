@@ -1,5 +1,5 @@
-import { StatusCodes } from "http-status-codes";
-import { XpenceService } from "../service/xpence";
+import {StatusCodes} from "http-status-codes";
+import {XpenceService} from "../service/xpence";
 const xpenceService = new XpenceService();
 export class XpenceController {
   constructor() {}

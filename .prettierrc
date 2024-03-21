@@ -1,1 +1,10 @@
-{}
+{
+  "printWidth": 120,
+  "bracketSpacing": false,
+  "overrides": [
+    {
+      "files": "*.{cmp,page}",
+      "options": {"parser": "html"}
+    }
+  ]
+}

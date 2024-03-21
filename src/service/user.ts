@@ -1,11 +1,10 @@
-const User = require("../../models").User;
+import User from "../../models/user";
 export class UserService {
   constructor() {}
 
   async createUser(data: any) {
     if (!data.name || !data.email) throw Error("params missing");
-    if (await this.findUserByEmail(data.email))
-      throw Error("user already exist given mail id!!!");
+    if (await this.findUserByEmail(data.email)) throw Error("user already exist given mail id!!!");
     return await User.create(data);
   }
 

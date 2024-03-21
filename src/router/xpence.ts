@@ -1,5 +1,5 @@
-import { Router } from "express";
-import { XpenceController } from "../controller/xpence";
+import {Router} from "express";
+import {XpenceController} from "../controller/xpence";
 export const xpenceRouter = Router();
 let xpenceController = new XpenceController();
 

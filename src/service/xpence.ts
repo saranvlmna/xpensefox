@@ -1,5 +1,4 @@
-const XpenceCard = require("../../models").XpenceCard;
-
+import XpenceCard from "../../models/xpence_card";
 export class XpenceService {
   constructor() {}
 
