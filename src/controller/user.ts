@@ -4,11 +4,24 @@ const userService = new UserService();
 export class UserController {
   constructor() {}
 
-  async createUser(req: Request, res: any) {
+  async signUp(req: Request, res: any) {
     try {
-      const response = await userService.createUser(req.body);
+      const response = await userService.signUp(req.body);
       res.status(StatusCodes.OK).send({
         response,
+      });
+    } catch (error: any) {
+      res.status(StatusCodes.BAD_GATEWAY).send({
+        message: error.message,
+      });
+    }
+  }
+
+  async signIn(req: Request, res: any) {
+    try {
+      const response = await userService.signIn(req.body);
+      res.status(StatusCodes.OK).send({
+        data: response,
       });
     } catch (error: any) {
       res.status(StatusCodes.BAD_GATEWAY).send({
