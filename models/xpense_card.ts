@@ -5,9 +5,7 @@ import User from "./user";
 interface xpenseCardAttributes {
   id: string;
   name: string;
-  created_month: string;
   budget: string;
-  color: string;
   userId: string;
   is_active: boolean;
 }
@@ -17,9 +15,7 @@ interface xpenseCardCreationAttributes extends Omit<xpenseCardAttributes, "id"> 
 class xpenseCard extends Model<xpenseCardAttributes, xpenseCardCreationAttributes> implements xpenseCardAttributes {
   public id!: string;
   public name!: string;
-  public created_month!: string;
   public budget!: string;
-  public color!: string;
   public userId!: string;
   public is_active!: boolean;
   public readonly createdAt!: Date;
@@ -44,17 +40,9 @@ xpenseCard.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    created_month: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
     budget: {
       type: DataTypes.STRING,
-      allowNull: false,
-    },
-    color: {
-      type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     is_active: {
       type: DataTypes.BOOLEAN,
