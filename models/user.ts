@@ -2,16 +2,7 @@ import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
 import xpenseCard from "./xpense_card";
 
-interface UserAttributes {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-}
-
-interface UserCreationAttributes extends Omit<UserAttributes, "id"> {}
-
-class User extends Model<UserAttributes, UserCreationAttributes> implements UserAttributes {
+class User extends Model {
   public id!: string;
   public name!: string;
   public email!: string;

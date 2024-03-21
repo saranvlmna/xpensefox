@@ -2,12 +2,11 @@ import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
 import User from "./user";
 
-class XpenseCard extends Model {
+class Xpense extends Model {
   public id!: string;
-  public name!: string;
-  public budget!: string;
   public userId!: string;
-  public is_active!: boolean;
+  public cardId!: string;
+  public amount!: number;
   public readonly createdAt!: Date;
   public readonly updatedAt!: Date;
   static associate(models: {User: typeof User}) {
@@ -15,7 +14,7 @@ class XpenseCard extends Model {
   }
 }
 
-XpenseCard.init(
+Xpense.init(
   {
     id: {
       type: DataTypes.UUID,
@@ -26,25 +25,20 @@ XpenseCard.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    name: {
+    cardId: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    budget: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    is_active: {
-      type: DataTypes.BOOLEAN,
+    amount: {
+      type: DataTypes.NUMBER,
       allowNull: false,
-      defaultValue: true,
     },
   },
   {
     sequelize,
-    modelName: "XpenseCard",
-    tableName: "xpense_cards",
+    modelName: "Xpense",
+    tableName: "xpense",
   },
 );
 
-export default XpenseCard;
+export default Xpense;
