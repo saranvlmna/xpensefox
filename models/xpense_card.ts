@@ -3,9 +3,9 @@ import {sequelize} from "./index";
 import User from "./user";
 
 class XpenseCard extends Model {
-  static associate(models: {User: typeof User}) {
-    this.belongsTo(models.User, {foreignKey: "userId"});
-  }
+  // static associate(models:any) {
+  //   this.belongsTo(models.User, {foreignKey: "userId"});
+  // }
 }
 
 XpenseCard.init(

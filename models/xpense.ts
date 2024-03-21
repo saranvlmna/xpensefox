@@ -1,11 +1,11 @@
 import {DataTypes, Model, UUIDV4} from "sequelize";
 import {sequelize} from "./index";
-import User from "./user";
 
 class Xpense extends Model {
-  static associate(models: {User: typeof User}) {
-    this.belongsTo(models.User, {foreignKey: "userId"});
-  }
+  // static associate(models: any) {
+  //   this.belongsTo(models.User, {foreignKey: "userId"});
+  //   this.belongsTo(models.XpenseCard, {foreignKey: "cardId"});
+  // }
 }
 
 Xpense.init(
