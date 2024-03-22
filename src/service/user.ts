@@ -60,6 +60,7 @@ export class UserService {
       where: {
         email,
       },
+      raw: true,
     });
   }
 }

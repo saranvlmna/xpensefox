@@ -19,12 +19,6 @@ export class HashService {
   }
 
   verifyToken(token: any) {
-    jwt.verify(token, secretKey, (err: any, decoded: any) => {
-      if (err) {
-        throw new Error("unauthorized");
-      } else {
-        return decoded;
-      }
-    });
+    return jwt.verify(token, secretKey);
   }
 }
