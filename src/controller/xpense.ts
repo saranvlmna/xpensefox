@@ -6,6 +6,7 @@ export class XpenseController {
 
   async createxpenseCard(req: any, res: any) {
     try {
+      req.body["userId"] = req["xuser"].id;
       const response = await xpenseService.createxpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
@@ -17,8 +18,10 @@ export class XpenseController {
       });
     }
   }
+
   async editxpenseCard(req: any, res: any) {
     try {
+      req.body["userId"] = req["xuser"].id;
       const response = await xpenseService.editxpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
@@ -30,8 +33,10 @@ export class XpenseController {
       });
     }
   }
+
   async deletexpenseCard(req: any, res: any) {
     try {
+      req.body["userId"] = req["xuser"].id;
       const response = await xpenseService.deletexpenseCard(req.body);
       res.status(StatusCodes.OK).send({
         response,
@@ -43,6 +48,7 @@ export class XpenseController {
       });
     }
   }
+
   async listxpenseCards(req: any, res: any) {
     try {
       const response = await xpenseService.listxpenseCards();
@@ -56,6 +62,7 @@ export class XpenseController {
       });
     }
   }
+
   async fetchxpense(req: any, res: any) {
     try {
       const response = await xpenseService.fetchxpense();
@@ -69,6 +76,7 @@ export class XpenseController {
       });
     }
   }
+
   async addxpense(req: any, res: any) {
     try {
       const response = await xpenseService.addxpense(req.body);
@@ -82,6 +90,7 @@ export class XpenseController {
       });
     }
   }
+
   async edixpense(req: any, res: any) {
     try {
       const response = await xpenseService.edixpense();
@@ -95,6 +104,7 @@ export class XpenseController {
       });
     }
   }
+
   async deletexpense(req: any, res: any) {
     try {
       const response = await xpenseService.deletexpense();

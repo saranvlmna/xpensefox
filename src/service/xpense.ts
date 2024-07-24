@@ -12,7 +12,6 @@ export class XpenseService {
     let updatingData = {
       name: data.name ?? data.name,
       budget: data.budget ?? data.budget,
-      is_active: data.is_active ?? data.is_active,
     };
     await XpenseCard.update(updatingData, {
       where: {
@@ -20,7 +19,7 @@ export class XpenseService {
         id: data.cardId,
       },
     });
-    return "User Details Updated";
+    return "Xpence Card Updated";
   }
 
   async deletexpenseCard(data: any) {
@@ -32,12 +31,17 @@ export class XpenseService {
     });
     return "Card Removed";
   }
+
   listxpenseCards() {}
+
   fetchxpense() {}
+
   async addxpense(data: any) {
     if (!data.userId || !data.cardId || !data.amount) throw Error("params missing");
     return await Xpense.create(data);
   }
+
   edixpense() {}
+
   deletexpense() {}
 }
