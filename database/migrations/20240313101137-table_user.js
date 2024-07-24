@@ -9,10 +9,10 @@ module.exports = {
         type: Sequelize.UUID,
         defaultValue: Sequelize.UUIDV4,
       },
-      name: {
+      user_name: {
         type: Sequelize.STRING,
       },
-      email: {
+      phone: {
         type: Sequelize.STRING,
       },
       password: {

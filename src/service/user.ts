@@ -5,17 +5,17 @@ export class UserService {
   constructor() {}
 
   async signUp(data: any) {
-    if (!data.name || !data.email || !data.password) throw Error("params missing");
+    if (!data.user_name || !data.phone || !data.password) throw Error("params missing");
     data.password = await hashService.genHash(data.password);
-    if (await this.findUserByEmail(data.email)) throw Error("user already exist given mail id!!!");
+    if (await this.findUserByPhone(data.phone)) throw Error("user already exist given phone!");
     return await User.create(data);
   }
 
   async signIn(data: any) {
-    if (!data.email || !data.password) throw Error("params missing");
+    if (!data.phone || !data.password) throw Error("params missing");
     let user: any;
     user =
-      (await this.findUserByEmail(data.email)) ||
+      (await this.findUserByPhone(data.phone)) ||
       (() => {
         throw new Error("User does not exist");
       })();
@@ -55,10 +55,10 @@ export class UserService {
     });
   }
 
-  async findUserByEmail(email: any) {
+  async findUserByPhone(phone: any) {
     return await User.findOne({
       where: {
-        email,
+        phone,
       },
       raw: true,
     });

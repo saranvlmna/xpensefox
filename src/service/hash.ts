@@ -15,7 +15,7 @@ export class HashService {
   }
 
   getToken(data: any) {
-    return jwt.sign(JSON.stringify(data), secretKey, {
+    return jwt.sign(data, secretKey, {
       expiresIn: "24h",
     });
   }

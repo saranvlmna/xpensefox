@@ -10,7 +10,7 @@ module.exports = async function (req: any, res: any, next: any) {
       throw new Error("unauthorized");
     }
     let decodedToken: any = hashService.verifyToken(authToken);
-    let user = await userService.findUserByEmail(decodedToken["email"]);
+    let user = await userService.findUserByPhone(decodedToken["phone"]);
     if (!user) {
       throw new Error("unauthorized");
     }

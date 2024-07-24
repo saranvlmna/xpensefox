@@ -24,6 +24,7 @@ export class UserController {
         data: response,
       });
     } catch (error: any) {
+      console.log(error);
       res.status(StatusCodes.BAD_GATEWAY).send({
         message: error.message,
       });
