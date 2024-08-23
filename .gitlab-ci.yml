@@ -1,7 +1,11 @@
 image:
   name: alpine:latest
 services:
-  - postgres:latest  
+  - postgres:latest
+variables:
+     POSTGRES_DB: $POSTGRES_DB
+     POSTGRES_USER: $POSTGRES_USER
+     POSTGRES_PASSWORD: $POSTGRES_PASSWORD
 stages:
   - build
 before_script:
