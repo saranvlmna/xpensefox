@@ -1,0 +1,27 @@
+image:
+  name: alpine:latest
+services:
+  - postgres:latest  
+stages:
+  - build
+before_script:
+  - mkdir -p ~/.ssh 
+  - "which ssh-agent || ( apk add openssh )" 
+  - eval $(ssh-agent -s) 
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null 
+  - ssh-add -l 
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+    
+build:development:
+  stage: build 
+  only:
+    - main 
+  script:
+    - echo "Build starting.." 
+    - apk update 
+    - apk add rsync 
+    - rsync --version 
+    - ssh ubuntu@54.165.107.96 'docker stop xpensefox || true && docker rm xpensefox || true'
+    - rsync -av -r ./* ubuntu@54.165.107.96:/home/ubuntu/servers/xpensefox
+    - ssh ubuntu@54.165.107.96 'cd /home/ubuntu/servers/xpensefox && docker build -t xpensefox-server -f Dockerfile . && docker run -d --name xpensefox xpensefox-server'
+     
