@@ -1,9 +1,9 @@
 {
   "development": {
     "username": "postgres",
-    "password": "vlmna",
+    "password": "serverdb",
     "database": "xpensefox",
-    "host": "localhost",
+    "host": "172.17.0.2",
     "dialect": "postgres"
   },
   "test": {
