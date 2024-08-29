@@ -1,9 +1,9 @@
 const env = process.env.NODE_ENV || "development";
 const config = require(__dirname + "/../config/config.json")[env];
-import {Sequelize} from "sequelize";
+import { Sequelize } from "sequelize";
 const sequelize = new Sequelize(config.database, config.username, config.password, {
-  host: "localhost",
-  dialect: "postgres",
+  host: config.host,
+  dialect: config.dialect,
   logging: false,
 });
 
@@ -17,4 +17,5 @@ async function connectionEstablish() {
 }
 connectionEstablish();
 
-export {sequelize};
+export { sequelize };
+
