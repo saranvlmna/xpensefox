@@ -1,3 +1,4 @@
+import {Sequelize} from "sequelize";
 import Xpense from "../../database/models/xpense";
 import XpenseCard from "../../database/models/xpense_card";
 export class XpenseService {
@@ -32,7 +33,23 @@ export class XpenseService {
     return "Card Removed";
   }
 
-  listxpenseCards() {}
+  async listXpenseCards(data: any) {
+    return await XpenseCard.findAll({
+      where: {
+        userId: data.userId,
+      },
+      attributes: {
+        include: [[Sequelize.fn("SUM", Sequelize.col("Xpenses.amount")), "expenditure"]],
+      },
+      include: [
+        {
+          model: Xpense,
+          attributes: [],
+        },
+      ],
+      group: ["XpenseCard.id"],
+    });
+  }
 
   fetchxpense() {}
 
