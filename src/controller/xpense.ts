@@ -96,7 +96,8 @@ export class XpenseController {
 
   async edixpense(req: any, res: any) {
     try {
-      const response = await xpenseService.edixpense();
+      req.body["userId"] = req["xuser"].id;
+      const response = await xpenseService.edixpense(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });
@@ -110,7 +111,8 @@ export class XpenseController {
 
   async deletexpense(req: any, res: any) {
     try {
-      const response = await xpenseService.deletexpense();
+      req.body["userId"] = req["xuser"].id;
+      const response = await xpenseService.deletexpense(req.body);
       res.status(StatusCodes.OK).send({
         response,
       });

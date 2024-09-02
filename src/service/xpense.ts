@@ -70,7 +70,15 @@ export class XpenseService {
     return await Xpense.create(data);
   }
 
-  edixpense() {}
+  async edixpense(data: any) {
+    await Xpense.update(data, {
+      where: {
+        userId: data.userId,
+        id: data.id,
+      },
+    });
+    return "Xpence Updated";
+  }
 
-  deletexpense() {}
+  deletexpense(data: any) {}
 }
