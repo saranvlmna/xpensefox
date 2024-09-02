@@ -20,7 +20,7 @@ export class XpenseService {
         id: data.cardId,
       },
     });
-    return "Xpence Card Updated";
+    return "Xpense Card Updated";
   }
 
   async deletexpenseCard(data: any) {
@@ -77,8 +77,16 @@ export class XpenseService {
         id: data.id,
       },
     });
-    return "Xpence Updated";
+    return "Xpense Updated";
   }
 
-  deletexpense(data: any) {}
+  async deletexpense(data: any) {
+    await Xpense.destroy({
+      where: {
+        userId: data.userId,
+        id: data.id,
+      },
+    });
+    return "Xpense Removed";
+  }
 }
