@@ -51,7 +51,19 @@ export class XpenseService {
     });
   }
 
-  fetchxpense() {}
+  async fetchxpense(data: any) {
+    return await XpenseCard.findAll({
+      where: {
+        userId: data.userId,
+        id: data.cardId,
+      },
+      include: [
+        {
+          model: Xpense,
+        },
+      ],
+    });
+  }
 
   async addxpense(data: any) {
     if (!data.userId || !data.cardId || !data.amount) throw Error("params missing");

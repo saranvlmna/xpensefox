@@ -66,7 +66,8 @@ export class XpenseController {
 
   async fetchxpense(req: any, res: any) {
     try {
-      const response = await xpenseService.fetchxpense();
+      req.query["userId"] = req["xuser"].id;
+      const response = await xpenseService.fetchxpense(req.query);
       res.status(StatusCodes.OK).send({
         response,
       });
