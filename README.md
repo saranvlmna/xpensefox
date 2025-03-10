@@ -1,3 +1,3 @@
 # xpensefox
 
-expense calculator
+expense calculator with ai support
