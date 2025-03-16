@@ -1,9 +1,13 @@
 import {Sequelize} from "sequelize";
-const env = process.env.NODE_ENV || "development";
-const config = require(__dirname + "/../config/config.json")[env];
-const sequelize = new Sequelize(config.database, config.username, config.password, {
-  host: config.host,
-  dialect: config.dialect,
+
+const database = process.env.DB_NAME || "";
+const username = process.env.DB_USER_NAME || "";
+const password = process.env.DB_PASSWOR || "";
+const host = process.env.DB_HOST || "";
+
+const sequelize = new Sequelize(database, username, password, {
+  host: host,
+  dialect: "postgres",
   logging: false,
 });
 
@@ -32,9 +36,9 @@ Object.keys(models).forEach((modelName) => {
 async function connectionEstablish() {
   try {
     await sequelize.authenticate();
-    console.log(`[database] ${config.database} successfully connected`);
+    console.log(`[database] ${database} successfully connected`);
   } catch (error) {
-    console.error(`[database] ${config.database} unable to connect: ${error}`);
+    console.error(`[database] ${database} unable to connect: ${error}`);
   }
 }
 connectionEstablish();
