@@ -1,4 +1,4 @@
-# 💸 Expense Fox: Smart Expense Management
+# 🦊💸  Expense Fox: Smart Expense Management
 
 ## 📘 Overview
 **Expense Fox** is a modern personal finance management application designed to help users efficiently track, analyze, and optimize their monthly expenses. It provides tools for setting budgets, organizing spending through customizable "expense cards" (like Food, Travel, etc.), and generating insightful analytics. A standout feature is the AI-powered OCR, which allows users to scan receipts and automatically log relevant data.
