@@ -1,6 +1,6 @@
 import {Sequelize} from "sequelize";
-import Xpense from "../../database/models/xpense";
-import XpenseCard from "../../database/models/xpense_card";
+import Xpense from "../../../database/models/xpense";
+import XpenseCard from "../../../database/models/xpense_card";
 export class XpenseService {
   constructor() {}
 

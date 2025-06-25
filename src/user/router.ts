@@ -1,5 +1,5 @@
 import {Router} from "express";
-import {UserController} from "../controller/user";
+import {UserController} from "./user";
 var authentication = require("../middleware/authentication");
 export const userRouter = Router();
 let userController = new UserController();

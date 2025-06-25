@@ -1,5 +1,5 @@
 import {StatusCodes} from "http-status-codes";
-import {XpenseService} from "../service/xpense";
+import {XpenseService} from "./lib/xpense";
 const xpenseService = new XpenseService();
 export class XpenseController {
   constructor() {}
