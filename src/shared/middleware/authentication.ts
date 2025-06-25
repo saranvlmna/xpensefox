@@ -1,16 +1,15 @@
-import {HashService} from "../service/hash";
-import {UserService} from "../service/user";
-let hashService = new HashService();
-let userService = new UserService();
+import findByPhone from "../../user/lib/find.by.phone";
+import {SecurityService} from "../utilities/hash";
 
-module.exports = async function (req: any, res: any, next: any) {
+export default async (req: any, res: any, next: any) => {
   try {
+    const securityService = new SecurityService();
     let authToken = req.headers.xpensetoken;
     if (!authToken) {
       throw new Error("unauthorized");
     }
-    let decodedToken: any = hashService.verifyToken(authToken);
-    let user = await userService.findUserByPhone(decodedToken["phone"]);
+    let decodedToken: any = securityService.verifyToken(authToken);
+    let user = await findByPhone(decodedToken["phone"]);
     if (!user) {
       throw new Error("unauthorized");
     }

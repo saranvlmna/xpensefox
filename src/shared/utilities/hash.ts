@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 const saltRounds = 10;
 const secretKey = "sdfaasfasdfasdfasfsdfasdf";
 
-export class HashService {
+export class SecurityService {
   constructor() {}
 
   async genHash(string: any) {

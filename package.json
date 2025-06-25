@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "expensefox app",
   "main": "server.ts",
+  "type":"module",
   "scripts": {
     "build": "npx tsc",
     "dev": "nodemon --config nodemon.json",

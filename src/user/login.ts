@@ -1,12 +1,14 @@
 import {StatusCodes} from "http-status-codes";
+import login from "./lib/login";
 
-export default async (req: Request, res: any) => {
+export default (req: Request, res: any) => {
   try {
-    const response = await userService.signUp(req.body);
+    const response = login(req.body);
     res.status(StatusCodes.OK).send({
-      response,
+      data: response,
     });
   } catch (error: any) {
+    console.log(error);
     res.status(StatusCodes.BAD_GATEWAY).send({
       message: error.message,
     });

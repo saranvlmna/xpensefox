@@ -1,11 +1,14 @@
 import {Router} from "express";
-import {UserController} from "./user";
-var authentication = require("../middleware/authentication");
+import authentication from "../shared/middleware/authentication";
+import login from "./login";
+import profileDelete from "./profile.delete";
+import profileEdit from "./profile.edit";
+import profileFetch from "./profile.fetch";
+import signup from "./signup";
 export const userRouter = Router();
-let userController = new UserController();
 
-userRouter.post("/singup", userController.signUp);
-userRouter.post("/singin", userController.signIn);
-userRouter.get("/fetch", authentication, userController.getProfile);
-userRouter.put("/edit", authentication, userController.editUser);
-userRouter.delete("/delete", authentication, userController.deleteUser);
+userRouter.post("/singup", signup);
+userRouter.post("/singin", login);
+userRouter.get("/fetch", authentication, profileFetch);
+userRouter.put("/edit", authentication, profileEdit);
+userRouter.delete("/delete", authentication, profileDelete);
